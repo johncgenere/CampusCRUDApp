@@ -36,7 +36,6 @@ class NewStudentForm extends Component{
               </div>
               <div className="ui fluid large black submit button"><i className="plus icon" /> Add Student </div>
             </div>
-            <div className="ui error message"></div>
           </form>
         </div>
       </div>
