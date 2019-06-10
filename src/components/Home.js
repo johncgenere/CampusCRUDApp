@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import StudentListing from './StudentListing';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { returnStudents } from '../actions';
 import axios from 'axios';
@@ -28,8 +28,9 @@ class Home extends Component {
     return(
       <div className="App">
         <div className="App-header">
-          <h1> Home </h1>
-          <StudentListing />
+          <h1> View Campuses or Students </h1>
+          <button className="ui button" style={{margin: '3%'}}><Link to="/campuslisting">View Campuses</Link></button>
+          <button className="ui button"><Link to="/studentlisting"> View Students </Link></button>
         </div>
       </div>
     );

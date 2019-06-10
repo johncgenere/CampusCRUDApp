@@ -30,9 +30,9 @@ class Campus extends Component {
           </div>
         </div>
         <div className="extra content">
-        <div class="ui two buttons">
-          <div class="ui basic grey button" onClick={this.onEdit}>Edit</div>
-          <div class="ui basic red button" onClick={this.onDelete}>Delete</div>
+        <div className="ui two buttons">
+          <div className="ui basic grey button" onClick={this.onEdit}>Edit</div>
+          <div className="ui basic red button" onClick={this.onDelete}>Delete</div>
         </div>
         </div>
       </div>
