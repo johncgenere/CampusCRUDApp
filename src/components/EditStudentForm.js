@@ -3,34 +3,35 @@ import React, {Component} from 'react';
 class EditStudentForm extends Component{
   render(){
     return(
-      <form className="ui large form" onKeyPress={this.onKeyPress}>
-        <div className="ui stacked segment">
-          <div className="field">
-            <div className="ui left icon input">
-              <i className="user icon"></i>
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={this.handleUsernameInput}
-              />
+      <div>
+        <form className="ui large form" style={{width: '30%'}}>
+          <div className="ui stacked segment">
+          <h1> Edit Student Information</h1>
+            <div className="field">
+                <input
+                  type="text"
+                  name="firstname"
+                  placeholder="First Name"
+                />
             </div>
-          </div>
-          <div className="field">
-            <div className="ui left icon input">
-              <i className="lock icon"></i>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={this.handlePasswordInput}
-              />
+            <div className="field">
+                <input
+                  type="text"
+                  name="lastname"
+                  placeholder="Last Name"
+                />
             </div>
+            <div className="field">
+                <input
+                  type="text"
+                  name="campus"
+                  placeholder="Campus"
+                />
+            </div>
+            <div className="ui fluid large black submit button"><i class="cogs icon"/> Edit Student </div>
           </div>
-          <div className="ui fluid large black submit button" onClick={this.handleLogin}>Login</div>
-        </div>
-        <div className="ui error message"></div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
