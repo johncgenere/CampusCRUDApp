@@ -23,12 +23,16 @@ const CampusListing = ({allCampuses}) => {
         <h1> Campus Listing </h1>
         <div style={{flexDirection: 'row'}}>
           <button className="ui button"><Link to='/'>Home</Link></button>
-          <button className="ui button">Campuses</button>
-          <button className="ui button">Students</button>
+          <button className="ui button"><Link to='/studentlisting'>Students</Link></button>
         </div>
         <div style={{flexDirection: 'row'}}>
           <h1> All Campuses </h1>
-          <button className="ui button"><i className="plus icon" /> Add Campus </button>
+          <button className="ui button">
+            <Link to='/newcampus'>
+              <i className="plus icon" />
+              Add Campus
+            </Link>
+          </button>
         </div>
         <div className="ui container grid">
           <div className="ui row">

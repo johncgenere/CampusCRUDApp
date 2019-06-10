@@ -6,6 +6,7 @@ import axios from 'axios';
 import Home from './Home';
 import CampusListing from './CampusListing';
 import StudentListing from './StudentListing';
+import NewCampusForm from './NewCampusForm';
 import '../styles/App.css';
 
 class App extends Component {
@@ -56,6 +57,11 @@ class App extends Component {
           <Route path ="/studentlisting" exact render = {
             () => {
               return (<StudentListing />);
+            }
+          }/>
+          <Route path ="/newcampus" exact render = {
+            () => {
+              return (<NewCampusForm />);
             }
           }/>
         </div>
