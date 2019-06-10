@@ -9,16 +9,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Route path ="/" exact render = {
-          () => {
-            return (<Home />);
-          }
-        }/>
-        <Route path ="/campuslisting" exact render = {
-          () => {
-            return (<CampusListing />);
-          }
-        }/>
+          <Route path ="/" exact render = {
+            () => {
+              return (<Home />);
+            }
+          }/>
+          <Route path ="/campuslisting" exact render = {
+            () => {
+              return (<CampusListing />);
+            }
+          }/>
         </div>
       </Router>
     );
