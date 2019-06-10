@@ -1,12 +1,51 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { returnStudents } from '../actions';
+import Student from './Student';
 
-const StudentListing = ({test}) => {
-  return <div> Student Listing </div>
+const StudentListing = ({allStudents}) => {
+  let table = [];
+  console.log(allStudents);
+    table.push(
+                <Student
+                  image={allStudents.image_path}
+                  student={allStudents.firstname}
+                  campus={allStudents.campus}
+                />
+              );
+
+  return(
+    <div className="App">
+      <div className="App-header">
+        <h1> Student Listing </h1>
+        <div style={{flexDirection: 'row'}}>
+          <button className="ui button"><Link to='/'>Home</Link></button>
+          <button className="ui button"><Link to='/campuslisting'>Campuses</Link></button>
+        </div>
+        <div style={{flexDirection: 'row'}}>
+          <h1> All Students </h1>
+          <button className="ui button">
+            <Link to='/newstudent'>
+              <i className="plus icon" />
+              Add Student
+            </Link>
+          </button>
+        </div>
+        <div className="ui container grid">
+          <div className="ui row">
+            {table}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
-  return { test: state.test };
+  return {
+    allStudents: state.allStudents
+  };
 }
 
-export default connect(mapStateToProps)(StudentListing);
+export default connect(mapStateToProps, { returnStudents })(StudentListing);

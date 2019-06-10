@@ -12,7 +12,7 @@ const CampusListing = ({allCampuses}) => {
                 <Campus
                   image={allCampuses[i].image_path}
                   campus={allCampuses[i].name}
-                  numOfStudents={allCampuses[i].id}  // id for now but later need num of students field from BE
+                  numOfStudents={allCampuses[i].population}  // id for now but later need num of students field from BE
                 />
               );
   }
