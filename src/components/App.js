@@ -8,6 +8,7 @@ import CampusListing from './CampusListing';
 import StudentListing from './StudentListing';
 import NewCampusForm from './NewCampusForm';
 import NewStudentForm from './NewStudentForm';
+import EditCampusForm from './EditCampusForm';
 import '../styles/App.css';
 
 class App extends Component {
@@ -69,6 +70,11 @@ class App extends Component {
           <Route path ="/newstudent" exact render = {
             () => {
               return (<NewStudentForm />);
+            }
+          }/>
+          <Route path ="/editcampus" exact render = {
+            () => {
+              return (<EditCampusForm />);
             }
           }/>
         </div>

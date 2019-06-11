@@ -25,3 +25,10 @@ export const returnSingleCampus = (campus) => {
     payload: campus
   }
 }
+
+export const returnCurrentEditCampus = (campusID) => {
+  return {
+    type: 'GET_EDIT_ID',
+    payload: campusID
+  }
+}

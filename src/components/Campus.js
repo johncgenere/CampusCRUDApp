@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { returnCurrentEditCampus } from '../actions';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+
 
 class Campus extends Component {
   constructor(props){
@@ -10,7 +14,7 @@ class Campus extends Component {
   }
 
   onEdit = (event) => {
-    console.log('edit');
+    this.props.returnCurrentEditCampus(this.props.id);
   }
 
   onDelete = (event) => {
@@ -40,7 +44,11 @@ class Campus extends Component {
             </div>
             <div className="extra content">
               <div className="ui two buttons">
-                <div className="ui basic grey button" onClick={this.onEdit}>Edit</div>
+                <div className="ui basic grey button" onClick={this.onEdit}>
+                  <Link to='/editcampus'>
+                    Edit
+                  </Link>
+                </div>
                 <div className="ui basic red button" onClick={this.onDelete}>Delete</div>
               </div>
             </div>
@@ -51,4 +59,10 @@ class Campus extends Component {
   }
 }
 
-export default Campus;
+const mapStateToProps = (state) => {
+  return {
+    editCampusID: state.editCampusID
+  };
+}
+
+export default connect(mapStateToProps, { returnCurrentEditCampus })(Campus);
