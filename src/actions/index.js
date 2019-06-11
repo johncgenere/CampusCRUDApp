@@ -32,3 +32,10 @@ export const returnCurrentEditCampus = (campusID) => {
     payload: campusID
   }
 }
+
+export const returnCurrentEditStudent = (studentID) => {
+  return {
+    type: 'GET_EDIT_STUDENT',
+    payload: studentID
+  }
+}

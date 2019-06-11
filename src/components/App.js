@@ -5,10 +5,11 @@ import { returnStudents, returnCampuses } from '../actions';
 import axios from 'axios';
 import Home from './Home';
 import CampusListing from './CampusListing';
-import StudentListing from './StudentListing';
 import NewCampusForm from './NewCampusForm';
-import NewStudentForm from './NewStudentForm';
 import EditCampusForm from './EditCampusForm';
+import StudentListing from './StudentListing';
+import NewStudentForm from './NewStudentForm';
+import EditStudentForm from './EditStudentForm';
 import '../styles/App.css';
 
 class App extends Component {
@@ -75,6 +76,11 @@ class App extends Component {
           <Route path ="/editcampus" exact render = {
             () => {
               return (<EditCampusForm />);
+            }
+          }/>
+          <Route path ="/editstudent" exact render = {
+            () => {
+              return (<EditStudentForm />);
             }
           }/>
         </div>

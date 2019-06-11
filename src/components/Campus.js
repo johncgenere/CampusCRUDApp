@@ -4,7 +4,6 @@ import { returnCurrentEditCampus } from '../actions';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-
 class Campus extends Component {
   constructor(props){
     super(props);

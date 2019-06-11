@@ -30,10 +30,17 @@ const getCurrentEditCampus = (id = 0, action) => {
   return id;
 }
 
+const getCurrentEditStudent = (id = 0, action) => {
+  if(action.type === 'GET_EDIT_STUDENT')
+    return action.payload;
+  return id;
+}
+
 export default combineReducers({
   allStudents: getStudents,
   allCampuses: getCampuses,
   student: getSingleStudent,
   campus: getSingleCampus,
-  editCampusID: getCurrentEditCampus
+  editCampusID: getCurrentEditCampus,
+  editStudentID: getCurrentEditStudent
 });
