@@ -19,8 +19,9 @@ class App extends Component {
       allCampuses: {}
     }
 
-    axios.get('http://localhost:7000/students/1')
+    axios.get('http://localhost:7000/getAllStudents')
       .then(response => {
+        console.log(response.data);
         let allStudents = response.data;
         this.setState({allStudents})
       })

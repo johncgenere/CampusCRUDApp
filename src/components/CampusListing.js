@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { returnCampuses } from '../actions';
 import Campus from './Campus'
 
+// allCampuses === this.props.allCampuses
 const CampusListing = ({allCampuses}) => {
   let table = [];
 

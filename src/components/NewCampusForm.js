@@ -48,6 +48,7 @@ class NewCampusForm extends Component{
     }).catch(err => {
       console.log(err);
     });
+    window.location.replace('/CampusListing');
   }
 
   render(){
@@ -90,10 +91,8 @@ class NewCampusForm extends Component{
                   />
               </div>
               <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
-                <Link to='/campuslisting'>
-                  <i className="plus icon" />
-                  Add Campus
-                </Link>
+                <i className="plus icon" />
+                Add Campus
               </div>
             </div>
           </form>

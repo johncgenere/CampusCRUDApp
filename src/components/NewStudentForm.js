@@ -28,7 +28,7 @@ class NewStudentForm extends Component{
     this.setState({firstName: e.target.value});
   }
 
-  handleFirstNameInput = (e) => {
+  handleLastNameInput = (e) => {
     this.setState({lastName: e.target.value});
   }
 
@@ -61,6 +61,8 @@ class NewStudentForm extends Component{
     }).catch(err => {
       console.log(err);
     });
+
+    window.location.replace('/StudentListing');
   }
 
   render(){
