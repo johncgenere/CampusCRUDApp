@@ -27,7 +27,7 @@ const CampusListing = ({allCampuses}) => {
         <div className="App-header">
           <h1> Campus Listing </h1>
           <div style={{flexDirection: 'row'}}>
-            <Link to='/'><button className="ui button">Home></button></Link>
+            <Link to='/'><button className="ui button">Home</button></Link>
             <Link to='/studentlisting'><button className="ui button">Students</button></Link>
           </div>
           <div style={{flexDirection: 'row'}}>
