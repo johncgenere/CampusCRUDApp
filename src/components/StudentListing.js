@@ -14,6 +14,7 @@ const StudentListing = ({allStudents}) => {
                   image={allStudents[i].image_path}
                   student={name}
                   campus={allStudents[i].campus}
+                  id={allStudents[i].id}
                 />
               );
   }
