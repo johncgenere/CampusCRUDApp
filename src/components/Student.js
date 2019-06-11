@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Campus extends Component {
+class Student extends Component {
   constructor(props){
     super(props);
 
@@ -25,9 +25,9 @@ class Campus extends Component {
               <img src={this.props.image} alt="Campus" />
             </div>
             <div className="content">
-              <div className="header">{this.props.campus}</div>
+              <div className="header">{this.props.student}</div>
               <div className="meta">
-                {this.props.numOfStudents} Students
+                {this.props.campus}
               </div>
             </div>
             <div className="extra content">
@@ -43,4 +43,4 @@ class Campus extends Component {
   }
 }
 
-export default Campus;
+export default Student;
