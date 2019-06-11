@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Campus extends Component {
   constructor(props){
@@ -13,7 +14,14 @@ class Campus extends Component {
   }
 
   onDelete = (event) => {
-    console.log('edit');
+    axios.delete('http://localhost:7000/college/'+this.props.id)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    window.location.replace('/CampusListing')
   }
 
   render(){

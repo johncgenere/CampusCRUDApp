@@ -13,9 +13,36 @@ const CampusListing = ({allCampuses}) => {
                 <Campus
                   image={allCampuses[i].image_path}
                   campus={allCampuses[i].name}
-                  numOfStudents={allCampuses[i].population}  // id for now but later need num of students field from BE
+                  numOfStudents={allCampuses[i].population}
+                  id={allCampuses[i].id}
                 />
               );
+  }
+
+
+
+  if(allCampuses.length === undefined || allCampuses.length === 0){
+    return(
+      <div className="App">
+        <div className="App-header">
+          <h1> Campus Listing </h1>
+          <div style={{flexDirection: 'row'}}>
+            <button className="ui button"><Link to='/'>Home</Link></button>
+            <button className="ui button"><Link to='/studentlisting'>Students</Link></button>
+          </div>
+          <div style={{flexDirection: 'row'}}>
+            <h1> All Campuses </h1>
+          </div>
+          <p style={{marginTop: '1.5%'}}> There are no campuses registered in the database.</p>
+          <button className="ui button">
+            <Link to='/newcampus'>
+              <i className="plus icon" />
+              Add Campus
+            </Link>
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return(
