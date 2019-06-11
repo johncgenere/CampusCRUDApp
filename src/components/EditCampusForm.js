@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { returnCurrentEditCampus } from '../actions';
 
@@ -55,6 +56,23 @@ class EditCampusForm extends Component{
     return(
       <div className="App">
         <div className="App-header">
+          <div style={{flexDirection: 'row', margin: '1%'}}>
+            <Link to='/'>
+              <button className="ui button">
+                Home
+              </button>
+            </Link>
+            <Link to='/campuslisting'>
+              <button className="ui button">
+                Campuses
+              </button>
+            </Link>
+            <Link to='/studentlisting'>
+              <button className="ui button">
+                Students
+              </button>
+            </Link>
+          </div>
           <form className="ui large form" style={{width: '30%'}}>
             <div className="ui stacked segment">
             <h1 style={{color: 'black'}}> Edit Campus Information </h1>

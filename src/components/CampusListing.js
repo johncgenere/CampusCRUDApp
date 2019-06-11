@@ -27,19 +27,19 @@ const CampusListing = ({allCampuses}) => {
         <div className="App-header">
           <h1> Campus Listing </h1>
           <div style={{flexDirection: 'row'}}>
-            <button className="ui button"><Link to='/'>Home</Link></button>
-            <button className="ui button"><Link to='/studentlisting'>Students</Link></button>
+            <Link to='/'><button className="ui button">Home></button></Link>
+            <Link to='/studentlisting'><button className="ui button">Students</button></Link>
           </div>
           <div style={{flexDirection: 'row'}}>
             <h1> All Campuses </h1>
           </div>
           <p style={{marginTop: '1.5%'}}> There are no campuses registered in the database.</p>
-          <button className="ui button">
-            <Link to='/newcampus'>
+          <Link to='/newcampus'>
+            <button className="ui button">
               <i className="plus icon" />
               Add Campus
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     );
@@ -50,17 +50,17 @@ const CampusListing = ({allCampuses}) => {
       <div className="App-header">
         <h1> Campus Listing </h1>
         <div style={{flexDirection: 'row'}}>
-          <button className="ui button"><Link to='/'>Home</Link></button>
-          <button className="ui button"><Link to='/studentlisting'>Students</Link></button>
+          <Link to='/'><button className="ui button">Home</button></Link>
+          <Link to='/studentlisting'><button className="ui button">Students</button></Link>
         </div>
         <div style={{flexDirection: 'row'}}>
           <h1> All Campuses </h1>
-          <button className="ui button">
-            <Link to='/newcampus'>
+          <Link to='/newcampus'>
+            <button className="ui button">
               <i className="plus icon" />
               Add Campus
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div className="ui container grid">
           <div className="ui row">

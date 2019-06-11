@@ -44,11 +44,11 @@ class Campus extends Component {
             </div>
             <div className="extra content">
               <div className="ui two buttons">
-                <div className="ui basic grey button" onClick={this.onEdit}>
+                <button className="ui basic grey button" onClick={this.onEdit}>
                   <Link to='/editcampus'>
                     Edit
                   </Link>
-                </div>
+                </button>
                 <div className="ui basic red button" onClick={this.onDelete}>Delete</div>
               </div>
             </div>
