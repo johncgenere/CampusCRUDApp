@@ -6,7 +6,6 @@ import Student from './Student';
 
 const StudentListing = ({allStudents}) => {
   let table = [];
-  console.log(allStudents);
   for(let i = 0; i < allStudents.length; i++){
     let name = allStudents[i].firstname + ' ' + allStudents[i].lastname;
     table.push(
@@ -47,6 +46,7 @@ const StudentListing = ({allStudents}) => {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     allStudents: state.allStudents
   };

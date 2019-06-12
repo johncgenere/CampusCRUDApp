@@ -63,7 +63,8 @@ class EditStudentForm extends Component{
     }).catch(err => {
       console.log(err);
     })
-    window.location.replace('/StudentListing')
+
+    window.location.replace('/studentlisting');
   }
 
   render(){
@@ -138,12 +139,12 @@ class EditStudentForm extends Component{
                     onChange={this.handleCollegeIDInput}
                   />
               </div>
-              <Link to='/campuslisting'>
+              
                 <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
                   <i className="cogs icon" />
                   Edit Student
                 </div>
-              </Link>
+
             </div>
           </form>
         </div>
