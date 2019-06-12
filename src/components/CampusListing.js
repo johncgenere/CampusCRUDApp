@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { returnCampuses } from '../actions';
 import Campus from './Campus'
 
 // allCampuses === this.props.allCampuses
@@ -78,4 +77,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { returnCampuses })(CampusListing);
+export default connect(mapStateToProps)(CampusListing);

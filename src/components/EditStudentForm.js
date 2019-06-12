@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { returnCurrentEditStudent } from '../actions';
 
 class EditStudentForm extends Component{
   constructor(props){
@@ -139,7 +138,7 @@ class EditStudentForm extends Component{
                     onChange={this.handleCollegeIDInput}
                   />
               </div>
-              
+
                 <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
                   <i className="cogs icon" />
                   Edit Student
@@ -159,4 +158,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { returnCurrentEditStudent })(EditStudentForm);
+export default connect(mapStateToProps)(EditStudentForm);

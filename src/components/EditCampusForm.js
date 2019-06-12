@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { returnCurrentEditCampus } from '../actions';
 
 class EditCampusForm extends Component{
   constructor(props){
@@ -126,4 +125,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { returnCurrentEditCampus })(EditCampusForm);
+export default connect(mapStateToProps)(EditCampusForm);

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { returnCurrentEditCampus } from '../actions';
+import { returnCurrentEditCampus, returnSingleCampus } from '../actions';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -8,8 +8,13 @@ class Campus extends Component {
   constructor(props){
     super(props);
 
+    this.onCampus = this.onCampus.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onDelete = this.onDelete.bind(this);
+  }
+
+  onCampus = (event) => {
+    this.props.returnSingleCampus(this.props.id);
   }
 
   onEdit = (event) => {
@@ -32,9 +37,11 @@ class Campus extends Component {
       <div className="column four wide" style={{margin: '4%'}}>
         <div className="ui linked cards">
           <div className="card">
-            <div className="image">
-              <img src={this.props.image} alt="Campus" />
-            </div>
+            <Link to='/singlecampus'>
+              <div className="image">
+                <img src={this.props.image} alt="Campus" onClick={this.onCampus} style={{borderRadius: '5px', margin: '1%'}}/>
+              </div>
+            </Link>
             <div className="content">
               <div className="header">{this.props.campus}</div>
               <div className="meta">
@@ -58,10 +65,4 @@ class Campus extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    editCampusID: state.editCampusID
-  };
-}
-
-export default connect(mapStateToProps, { returnCurrentEditCampus })(Campus);
+export default connect(null, { returnCurrentEditCampus, returnSingleCampus })(Campus);

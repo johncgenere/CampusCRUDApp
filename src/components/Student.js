@@ -58,10 +58,4 @@ class Student extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    editStudentID: state.editStudentID
-  };
-}
-
-export default connect(mapStateToProps, { returnCurrentEditStudent })(Student);
+export default connect(null, { returnCurrentEditStudent })(Student);

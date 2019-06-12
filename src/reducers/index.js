@@ -12,13 +12,13 @@ const getCampuses = (allCampuses = [], action) => {
   return allCampuses;
 }
 
-const getSingleStudent = (student = null, action) => {
+const getSingleStudent = (student = 0, action) => {
   if(action.type === 'GET_STUDENT')
     return action.payload;
   return student;
 }
 
-const getSingleCampus = (campus = null, action) => {
+const getSingleCampus = (campus = 0, action) => {
   if(action.type === 'GET_CAMPUS')
     return action.payload;
   return campus;

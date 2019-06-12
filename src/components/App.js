@@ -7,6 +7,7 @@ import Home from './Home';
 import CampusListing from './CampusListing';
 import NewCampusForm from './NewCampusForm';
 import EditCampusForm from './EditCampusForm';
+import SingleViewCampus from './SingleViewCampus';
 import StudentListing from './StudentListing';
 import NewStudentForm from './NewStudentForm';
 import EditStudentForm from './EditStudentForm';
@@ -23,7 +24,6 @@ class App extends Component {
 
     axios.get('http://localhost:7000/getAllStudents')
       .then(response => {
-        console.log(response.data);
         let allStudents = response.data;
         this.setState({allStudents})
       })
@@ -81,6 +81,11 @@ class App extends Component {
           <Route path ="/editstudent" exact render = {
             () => {
               return (<EditStudentForm />);
+            }
+          }/>
+          <Route path ="/singlecampus" exact render = {
+            () => {
+              return (<SingleViewCampus />);
             }
           }/>
         </div>

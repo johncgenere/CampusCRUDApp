@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { returnStudents } from '../actions';
 import Student from './Student';
 
 const StudentListing = ({allStudents}) => {
@@ -46,10 +45,9 @@ const StudentListing = ({allStudents}) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     allStudents: state.allStudents
   };
 }
 
-export default connect(mapStateToProps, { returnStudents })(StudentListing);
+export default connect(mapStateToProps)(StudentListing);
