@@ -119,8 +119,8 @@ class SingleViewCampus extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    campus: state.campus,
-    students: state.allStudents
+    campus: state.getSingleCampus,
+    students: state.getStudents
   };
 }
 
