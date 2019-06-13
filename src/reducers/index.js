@@ -1,7 +1,16 @@
+// export const getStudents = (allStudents = [], action) => {
+//   if(action.type === 'ALL_STUDENTS')
+//     return action.payload;
+//   return allStudents;
+// }
+
 export const getStudents = (allStudents = [], action) => {
-  if(action.type === 'ALL_STUDENTS')
-    return action.payload;
-  return allStudents;
+  switch(action.type) {
+    case 'ALL_STUDENTS':
+      return action.payload;
+    default:
+      return allStudents;
+  }
 }
 
 export const getCampuses = (allCampuses = [], action) => {
