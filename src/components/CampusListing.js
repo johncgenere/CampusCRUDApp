@@ -79,6 +79,7 @@ class CampusListing extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     allCampuses: state.getCampuses
   };

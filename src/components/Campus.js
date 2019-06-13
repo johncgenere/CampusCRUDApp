@@ -14,7 +14,7 @@ class Campus extends Component {
   }
 
   onViewCampus = (event) => {
-    this.props.returnSingleCampus(this.props.id);
+    this.props.sendCampusID();
   }
 
   onEdit = (event) => {
@@ -66,4 +66,10 @@ class Campus extends Component {
   }
 }
 
-export default connect(null, { returnCurrentEditCampus, returnSingleCampus })(Campus);
+const mapDispatchToProps = dispatch => {
+  return{
+    sendCampusID: () => dispatch(returnCurrentEditCampus(this.props.id))
+  }
+}
+
+export default connect(mapDispatchToProps, { returnCurrentEditCampus, returnSingleCampus })(Campus);
