@@ -24,7 +24,7 @@ class Student extends Component {
       .catch(err => {
         console.log(err);
       })
-    window.location.replace('StudentListing');
+    window.location.replace('studentlisting');
   }
 
   render(){
