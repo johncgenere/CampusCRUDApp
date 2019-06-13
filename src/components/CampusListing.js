@@ -20,7 +20,7 @@ class CampusListing extends Component {
                   <Campus
                     image={allCampuses[i].image_path}
                     campus={allCampuses[i].name}
-                    numOfStudents={allCampuses[i].population}
+                    numOfStudents={allCampuses[i].students.length}
                     id={allCampuses[i].id}
                   />
                 );

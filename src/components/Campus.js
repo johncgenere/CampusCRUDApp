@@ -8,12 +8,12 @@ class Campus extends Component {
   constructor(props){
     super(props);
 
-    this.onCampus = this.onCampus.bind(this);
+    this.onViewCampus = this.onViewCampus.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onDelete = this.onDelete.bind(this);
   }
 
-  onCampus = (event) => {
+  onViewCampus = (event) => {
     this.props.returnSingleCampus(this.props.id);
   }
 
@@ -37,16 +37,17 @@ class Campus extends Component {
       <div className="column four wide" style={{margin: '4%'}}>
         <div className="ui linked cards">
           <div className="card">
-            <Link to='/singlecampus'>
-              <div className="image">
-                <img src={this.props.image} alt="Campus" onClick={this.onCampus} style={{borderRadius: '5px', margin: '1%'}}/>
-              </div>
-            </Link>
+            <div className="image">
+              <img src={this.props.image} alt="Campus" />
+            </div>
             <div className="content">
               <div className="header">{this.props.campus}</div>
               <div className="meta">
                 {this.props.numOfStudents} Students
               </div>
+              <Link to='/singlecampus'>
+                <button className="ui button" onClick={this.onViewCampus}> View Campus </button>
+              </Link>
             </div>
             <div className="extra content">
               <div className="ui two buttons">
