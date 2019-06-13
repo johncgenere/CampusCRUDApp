@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { allStudentsThunk, allCampusesThunk } from '../thunks';
+import { allStudentsThunk, allCampusesThunk, singleStudentThunk, singleCampusThunk } from '../thunks';
 import Student from './Student';
 
 class StudentListing extends Component {
   componentDidMount(){
     this.props.getAllStudents();
     this.props.getAllCampuses();
+    this.props.getSingleStudent(24);
+    this.props.getSingleCampus(19);
   }
 
   render(){
+    console.log(this.props.student, this.props.campus);
     let table = [];
     let allStudents = this.props.allStudents;
 
@@ -80,14 +83,18 @@ class StudentListing extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    allStudents: state.getStudents
+    allStudents: state.getStudents,
+    student: state.getSingleStudent,
+    campus: state.getSingleCampus
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getAllStudents: () => dispatch(allStudentsThunk()),
-    getAllCampuses: () => dispatch(allCampusesThunk())
+    getAllCampuses: () => dispatch(allCampusesThunk()),
+    getSingleStudent: (id) => dispatch(singleStudentThunk(id)),
+    getSingleCampus: (id) => dispatch(singleCampusThunk(id))
   };
 }
 

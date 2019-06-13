@@ -22,7 +22,7 @@ export const getCampuses = (allCampuses = [], action) => {
   }
 }
 
-export const getSingleStudent = (student = 0, action) => {
+export const getSingleStudent = (student = null, action) => {
   switch(action.type){
     case 'GET_STUDENT':
       return action.payload;
@@ -31,7 +31,7 @@ export const getSingleStudent = (student = 0, action) => {
   }
 }
 
-export const getSingleCampus = (campus = 0, action) => {
+export const getSingleCampus = (campus = null, action) => {
   switch(action.type){
     case 'GET_CAMPUS':
       return action.payload;
