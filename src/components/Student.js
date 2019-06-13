@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { returnCurrentEditStudent } from '../actions';
+import { returnCurrentEditStudent, returnSingleStudent } from '../actions';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,6 +10,11 @@ class Student extends Component {
 
     this.onEdit = this.onEdit.bind(this);
     this.onDelete = this.onDelete.bind(this);
+    this.onViewStudent = this.onViewStudent.bind(this);
+  }
+
+  onViewStudent = (event) => {
+    this.props.returnSingleStudent(this.props.id);
   }
 
   onEdit = (event) => {
@@ -40,6 +45,9 @@ class Student extends Component {
               <div className="meta">
                 {this.props.campus}
               </div>
+              <Link to='/singlestudent'>
+                <button className="ui button" onClick={this.onViewStudent}> View Student </button>
+              </Link>
             </div>
             <div className="extra content">
               <div className="ui two buttons">
@@ -58,4 +66,4 @@ class Student extends Component {
   }
 }
 
-export default connect(null, { returnCurrentEditStudent })(Student);
+export default connect(null, { returnCurrentEditStudent, returnSingleStudent })(Student);

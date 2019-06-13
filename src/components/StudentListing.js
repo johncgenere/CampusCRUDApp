@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { allStudentsThunk } from '../thunks';
+import { allStudentsThunk, allCampusesThunk } from '../thunks';
 import Student from './Student';
 
 class StudentListing extends Component {
   componentDidMount(){
     this.props.getAllStudents();
+    this.props.getAllCampuses();
   }
 
   render(){
@@ -85,7 +86,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getAllStudents: () => dispatch(allStudentsThunk())
+    getAllStudents: () => dispatch(allStudentsThunk()),
+    getAllCampuses: () => dispatch(allCampusesThunk())
   };
 }
 

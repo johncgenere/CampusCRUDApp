@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { allCampusesThunk } from '../thunks';
 import { returnCurrentEditStudent } from '../actions';
 import axios from 'axios';
 import Campus from './Campus';
@@ -38,6 +37,17 @@ class SingleViewStudent extends Component{
   }
 
   render(){
+    let table = [];
+    let allCampuses = this.props.allCampuses;
+
+    for(let i = 0; i < allCampuses.length; i++){
+      let campus = allCampuses[i];
+      console.log(campus);
+      table.push(
+                  <option value={campus.id}>{campus.name}</option>
+                );
+    }
+
     console.log(this.state.selectedNewCampus);
     return(
       <div className="App">
@@ -64,11 +74,7 @@ class SingleViewStudent extends Component{
                   onChange={this.handleCampusChange}
                   style={{fontSize: '20px', width: '30%', height: '20%', borderRadius: '5px'}}>
             <option value="" style= {{color: 'grey'}}>Select campus...</option>
-            <option value="y">Y</option>
-            <option value="g">G</option>
-            <option value="pg">PG</option>
-            <option value="pg13">PG-13</option>
-            <option value="r">R</option>
+            {table}
           </select>
           <button className="ui red button">
             Change Campus
@@ -79,4 +85,12 @@ class SingleViewStudent extends Component{
   }
 }
 
-export default SingleViewStudent;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    student: state.getSingleStudent,
+    allCampuses: state.getCampuses
+  };
+}
+
+export default connect(mapStateToProps, {returnCurrentEditStudent})(SingleViewStudent);
