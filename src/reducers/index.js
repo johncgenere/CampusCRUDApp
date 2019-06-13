@@ -14,33 +14,49 @@ export const getStudents = (allStudents = [], action) => {
 }
 
 export const getCampuses = (allCampuses = [], action) => {
-  if(action.type === 'ALL_CAMPUSES')
-    return action.payload;
-  return allCampuses;
+  switch(action.type){
+    case 'ALL_CAMPUSES':
+      return action.payload;
+    default:
+      return allCampuses;
+  }
 }
 
 export const getSingleStudent = (student = 0, action) => {
-  if(action.type === 'GET_STUDENT')
-    return action.payload;
-  return student;
+  switch(action.type){
+    case 'GET_STUDENT':
+      return action.payload;
+    default:
+      return student;
+  }
 }
 
 export const getSingleCampus = (campus = 0, action) => {
-  if(action.type === 'GET_CAMPUS')
-    return action.payload;
-  return campus;
+  switch(action.type){
+    case 'GET_CAMPUS':
+      return action.payload;
+    default:
+      return campus;
+  }
 }
 
 export const getCurrentEditCampus = (id = 0, action) => {
-  if(action.type === 'GET_EDIT_ID')
-    return action.payload;
-  return id;
+  switch (action.type) {
+    case 'GET_EDIT_ID':
+      return action.payload;
+    default:
+      return id;
+  }
 }
 
 export const getCurrentEditStudent = (id = 0, action) => {
-  if(action.type === 'GET_EDIT_STUDENT')
-    return action.payload;
-  return id;
+  switch (action.type) {
+    case 'GET_EDIT_STUDENT':
+      return action.payload;
+    default:
+      return id;
+
+  }
 }
 
 // export default combineReducers({
