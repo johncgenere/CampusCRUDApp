@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { allCampusesThunk } from '../thunks';
 import Campus from './Campus'
 
-// allCampuses === this.props.allCampuses
-// const CampusListing = ({allCampuses}) => {
 class CampusListing extends Component {
   componentDidMount(){
       this.props.getAllCampuses();

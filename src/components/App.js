@@ -56,6 +56,11 @@ class App extends Component {
               return (<SingleViewCampus />);
             }
           }/>
+          <Route path ="/singlestudent" exact render = {
+            () => {
+              return (<SingleViewStudent />);
+            }
+          }/>
         </div>
       </Router>
     );

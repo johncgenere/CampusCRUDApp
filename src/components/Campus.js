@@ -33,6 +33,37 @@ class Campus extends Component {
   }
 
   render(){
+    if(!this.props.delete){
+      return(
+        <div className="column four wide" style={{margin: '4%'}}>
+          <div className="ui linked cards">
+            <div className="card">
+              <div className="image">
+                <img src={this.props.image} alt="Campus" />
+              </div>
+              <div className="content">
+                <div className="header">{this.props.campus}</div>
+                <div className="meta">
+                  {this.props.numOfStudents} Students
+                </div>
+                <Link to='/singlecampus'>
+                  <button className="ui button" onClick={this.onViewCampus}> View Campus </button>
+                </Link>
+              </div>
+              <div className="extra content">
+                <div className="ui buttons">
+                  <button className="ui basic grey button" onClick={this.onEdit}>
+                    <Link to='/editcampus'>
+                      Edit
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
     return(
       <div className="column four wide" style={{margin: '4%'}}>
         <div className="ui linked cards">

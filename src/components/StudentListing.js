@@ -25,6 +25,30 @@ class StudentListing extends Component {
                 );
     }
 
+    if(allStudents.length === undefined || allStudents.length === 0){
+      return(
+        <div className="App">
+          <div className="App-header">
+            <h1> Student Listing </h1>
+            <div style={{flexDirection: 'row'}}>
+              <Link to='/'><button className="ui button">Home</button></Link>
+              <Link to='/campuslisting'><button className="ui button">Campuses</button></Link>
+            </div>
+            <div style={{flexDirection: 'row'}}>
+              <h1> All Students </h1>
+            </div>
+            <p style={{marginTop: '1.5%'}}> There are no students registered in the database.</p>
+            <Link to='/newstudent'>
+              <button className="ui button">
+                <i className="plus icon" />
+                Add Student
+              </button>
+            </Link>
+          </div>
+        </div>
+      );
+    }
+
     return(
       <div className="App">
         <div className="App-header">
