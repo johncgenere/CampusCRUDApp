@@ -24,7 +24,7 @@ class StudentListing extends Component {
                   />
                 );
     }
-    
+
     return(
       <div className="App">
         <div className="App-header">
@@ -61,7 +61,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getAllStudents: () => allStudentsThunk()
+    getAllStudents: () => dispatch(allStudentsThunk())
   };
 }
 
