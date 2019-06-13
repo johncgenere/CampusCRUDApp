@@ -66,6 +66,16 @@ class NewStudentForm extends Component{
   }
 
   render(){
+    // Use something like this in the call to post the student to add to appropriate school
+    // let id = 0;
+    // if(this.props.addToCollege === undefined){
+    //   id = '2'
+    // } else {
+    //   id = this.props.addToCollege;
+    // }
+
+    // console.log(id);
+
     return(
       <div className="App">
         <div className="App-header">
@@ -137,7 +147,8 @@ class NewStudentForm extends Component{
                     onChange={this.handleCollegeIDInput}
                   />
               </div>
-              
+              <p style={{color: 'black', fontSize: '13px'}}> Campus ID could be left empty if adding from Campus Page. </p>
+
                 <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
                   <i className="plus icon" />
                   Add Student

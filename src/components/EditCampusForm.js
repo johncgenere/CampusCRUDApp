@@ -48,7 +48,7 @@ class EditCampusForm extends Component{
     }).catch(err => {
       console.log(err);
     })
-    window.location.replace('/CampusListing')
+    window.location.replace('/campuslisting')
   }
 
   render(){
