@@ -12,43 +12,35 @@ const getCampuses = (allCampuses = [], action) => {
   return allCampuses;
 }
 
-const getSingleStudent = (student = null, action) => {
+const getSingleStudent = (student = 0, action) => {
   if(action.type === 'GET_STUDENT')
     return action.payload;
   return student;
 }
 
-const getSingleCampus = (campus = null, action) => {
+const getSingleCampus = (campus = 0, action) => {
   if(action.type === 'GET_CAMPUS')
     return action.payload;
   return campus;
 }
 
-const testReducer = () => {
-  return [
-    {
-      firstname: 'John',
-      lastname: 'Genere'
-    },
-    {
-      firstname: 'John',
-      lastname: 'Smith'
-    },
-    {
-      firstname: 'Dan',
-      lastname: 'Gilbert'
-    },
-    {
-      firstname: '2',
-      lastname: 'Chains'
-    }
-  ];
-};
+const getCurrentEditCampus = (id = 0, action) => {
+  if(action.type === 'GET_EDIT_ID')
+    return action.payload;
+  return id;
+}
+
+const getCurrentEditStudent = (id = 0, action) => {
+  if(action.type === 'GET_EDIT_STUDENT')
+    return action.payload;
+  return id;
+}
 
 export default combineReducers({
   allStudents: getStudents,
   allCampuses: getCampuses,
   student: getSingleStudent,
   campus: getSingleCampus,
-  test: testReducer
+  editCampusID: getCurrentEditCampus,
+  editStudentID: getCurrentEditStudent
 });

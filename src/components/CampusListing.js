@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { returnCampuses } from '../actions';
 import Campus from './Campus'
 
 // allCampuses === this.props.allCampuses
@@ -13,9 +12,36 @@ const CampusListing = ({allCampuses}) => {
                 <Campus
                   image={allCampuses[i].image_path}
                   campus={allCampuses[i].name}
-                  numOfStudents={allCampuses[i].population}  // id for now but later need num of students field from BE
+                  numOfStudents={allCampuses[i].population}
+                  id={allCampuses[i].id}
                 />
               );
+  }
+
+
+
+  if(allCampuses.length === undefined || allCampuses.length === 0){
+    return(
+      <div className="App">
+        <div className="App-header">
+          <h1> Campus Listing </h1>
+          <div style={{flexDirection: 'row'}}>
+            <Link to='/'><button className="ui button">Home</button></Link>
+            <Link to='/studentlisting'><button className="ui button">Students</button></Link>
+          </div>
+          <div style={{flexDirection: 'row'}}>
+            <h1> All Campuses </h1>
+          </div>
+          <p style={{marginTop: '1.5%'}}> There are no campuses registered in the database.</p>
+          <Link to='/newcampus'>
+            <button className="ui button">
+              <i className="plus icon" />
+              Add Campus
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return(
@@ -23,17 +49,17 @@ const CampusListing = ({allCampuses}) => {
       <div className="App-header">
         <h1> Campus Listing </h1>
         <div style={{flexDirection: 'row'}}>
-          <button className="ui button"><Link to='/'>Home</Link></button>
-          <button className="ui button"><Link to='/studentlisting'>Students</Link></button>
+          <Link to='/'><button className="ui button">Home</button></Link>
+          <Link to='/studentlisting'><button className="ui button">Students</button></Link>
         </div>
         <div style={{flexDirection: 'row'}}>
           <h1> All Campuses </h1>
-          <button className="ui button">
-            <Link to='/newcampus'>
+          <Link to='/newcampus'>
+            <button className="ui button">
               <i className="plus icon" />
               Add Campus
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div className="ui container grid">
           <div className="ui row">
@@ -51,4 +77,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { returnCampuses })(CampusListing);
+export default connect(mapStateToProps)(CampusListing);

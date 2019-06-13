@@ -62,13 +62,40 @@ class NewStudentForm extends Component{
       console.log(err);
     });
 
-    window.location.replace('/StudentListing');
+    window.location.replace('studentlisting');
   }
 
   render(){
+    // Use something like this in the call to post the student to add to appropriate school
+    // let id = 0;
+    // if(this.props.addToCollege === undefined){
+    //   id = '2'
+    // } else {
+    //   id = this.props.addToCollege;
+    // }
+
+    // console.log(id);
+
     return(
       <div className="App">
         <div className="App-header">
+          <div style={{flexDirection: 'row', margin: '1%'}}>
+            <Link to='/'>
+              <button className="ui button">
+                Home
+              </button>
+            </Link>
+            <Link to='/campuslisting'>
+              <button className="ui button">
+                Campuses
+              </button>
+            </Link>
+            <Link to='/studentlisting'>
+              <button className="ui button">
+                Students
+              </button>
+            </Link>
+          </div>
           <form className="ui large form" style={{width: '30%'}}>
             <div className="ui stacked segment">
             <h1 style={{color: 'black'}}> Add New Student </h1>
@@ -120,12 +147,13 @@ class NewStudentForm extends Component{
                     onChange={this.handleCollegeIDInput}
                   />
               </div>
-              <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
-                <Link to='/campuslisting'>
+              <p style={{color: 'black', fontSize: '13px'}}> Campus ID could be left empty if adding from Campus Page. </p>
+
+                <div className="ui fluid large black submit button" onClick={this.handleSubmit}>
                   <i className="plus icon" />
                   Add Student
-                </Link>
-              </div>
+                </div>
+
             </div>
           </form>
         </div>

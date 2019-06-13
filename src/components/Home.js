@@ -6,8 +6,16 @@ const Home = () => {
     <div className="App">
       <div className="App-header">
         <h1> View Campuses or Students </h1>
-        <button className="ui button" style={{margin: '3%'}}><Link to="/campuslisting">View Campuses</Link></button>
-        <button className="ui button"><Link to="/studentlisting"> View Students </Link></button>
+        <Link to="/campuslisting">
+          <button className="ui button" style={{marginBottom: '10%'}}>
+            View Campuses
+          </button>
+        </Link>
+        <Link to="/studentlisting">
+          <button className="ui button">
+            View Students
+          </button>
+        </Link>
       </div>
     </div>
   );

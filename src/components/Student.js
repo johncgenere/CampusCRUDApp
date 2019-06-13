@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { returnCurrentEditStudent } from '../actions';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Student extends Component {
   constructor(props){
@@ -9,11 +13,18 @@ class Student extends Component {
   }
 
   onEdit = (event) => {
-    console.log('edit');
+    this.props.returnCurrentEditStudent(this.props.id);
   }
 
   onDelete = (event) => {
-    console.log('edit');
+    axios.delete('http://localhost:7000/students/'+this.props.id)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    window.location.replace('StudentListing');
   }
 
   render(){
@@ -32,7 +43,11 @@ class Student extends Component {
             </div>
             <div className="extra content">
               <div className="ui two buttons">
-                <div className="ui basic grey button" onClick={this.onEdit}>Edit</div>
+                <div className="ui basic grey button" onClick={this.onEdit}>
+                  <Link to='/editstudent'>
+                    Edit
+                  </Link>
+                </div>
                 <div className="ui basic red button" onClick={this.onDelete}>Delete</div>
               </div>
             </div>
@@ -43,4 +58,4 @@ class Student extends Component {
   }
 }
 
-export default Student;
+export default connect(null, { returnCurrentEditStudent })(Student);
