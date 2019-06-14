@@ -121,7 +121,7 @@ class EditCampusForm extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    id: state.editCampusID
+    id: state.getCurrentEditCampus
   };
 }
 
