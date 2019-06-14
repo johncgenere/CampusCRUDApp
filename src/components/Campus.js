@@ -33,13 +33,14 @@ class Campus extends Component {
   }
 
   render(){
-    if(!this.props.delete){
+    // used when giving single view student comp a campus comp
+    if(this.props.delete){
       return(
         <div className="column four wide" style={{margin: '4%'}}>
           <div className="ui linked cards">
             <div className="card">
               <div className="image">
-                <img src={this.props.image} alt="Campus" />
+                <img className="ui small image" src={this.props.image} alt="Campus" />
               </div>
               <div className="content">
                 <div className="header">{this.props.campus}</div>

@@ -38,16 +38,16 @@ class Student extends Component {
         <div className="ui linked cards">
           <div className="card">
             <div className="image">
-              <img src={this.props.image} alt="Campus" />
+              <img className="ui small image" src={this.props.image} alt="Campus" />
             </div>
             <div className="content">
               <div className="header">{this.props.student}</div>
               <div className="meta">
                 {this.props.campus}
               </div>
-              <Link to='/singlestudent'>
+
                 <button className="ui button" onClick={this.onViewStudent}> View Student </button>
-              </Link>
+
             </div>
             <div className="extra content">
               <div className="ui two buttons">
