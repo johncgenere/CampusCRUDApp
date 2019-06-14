@@ -92,7 +92,7 @@ class SingleViewCampus extends Component {
           </div>
           <h1>{view.name}</h1>
           <div style={{flexDirection: 'row'}}>
-            <img src={view.image_path} alt={view.name}/>
+            <img className="ui large image" src={view.image_path} alt={view.name} style={{marginLeft: '32.5%'}}/>
             <div>
               <p>Address: {view.address}</p>
               <p>{view.description}</p>
